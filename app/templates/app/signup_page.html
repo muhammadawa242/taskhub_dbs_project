@@ -1,0 +1,128 @@
+{% extends 'app/layout.html' %}
+
+{% block body %}
+    <form action="login_page" method="post" id="myForm">
+        {% csrf_token %}
+
+        <section class="pb-4">
+            <div class="bg-white border rounded-5">
+                
+                <section class="w-100 px-4 py-5 bg-dark" style="border-radius: .5rem .5rem 0 0;">
+                <style>
+                    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+                    font-size: 1rem;
+                    line-height: 2.15;
+                    padding-left: .75em;
+                    padding-right: .75em;
+                    }
+            
+                    .card-registration .select-arrow {
+                    top: 13px;
+                    }
+                </style>
+                <div class="row">
+                    <div class="col">
+                    <div class="card card-registration">
+                        <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;">
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+                            <h4 class="mb-5 text-uppercase">Student registration form</h4>
+            
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <input type="text" id="form3Example1m" class="form-control form-control-lg">
+                                    <label class="form-label" for="form3Example1m" style="margin-left: 0px;">First name</label>
+                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 68.8px;"></div><div class="form-notch-trailing"></div></div></div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <input type="text" id="form3Example1n" class="form-control form-control-lg">
+                                    <label class="form-label" for="form3Example1n" style="margin-left: 0px;">Last name</label>
+                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 68px;"></div><div class="form-notch-trailing"></div></div></div>
+                                </div>
+                            </div>
+            
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example8" class="form-control form-control-lg">
+                                <label class="form-label" for="form3Example8" style="margin-left: 0px;">Address</label>
+                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 55.2px;"></div><div class="form-notch-trailing"></div></div></div>
+            
+                            <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+            
+                                <h6 class="mb-0 me-4">Gender: </h6>
+            
+                                <div class="form-check form-check-inline mb-0 me-4">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="option1">
+                                <label class="form-check-label" for="femaleGender">Female</label>
+                                </div>
+            
+                                <div class="form-check form-check-inline mb-0 me-4">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender" value="option2">
+                                <label class="form-check-label" for="maleGender">Male</label>
+                                </div>
+            
+                                <div class="form-check form-check-inline mb-0">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender" value="option3">
+                                <label class="form-check-label" for="otherGender">Other</label>
+                                </div>
+            
+                            </div>
+            
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+            
+                                <div id="select-wrapper-53891" class="select-wrapper"><div class="form-outline"><input class="form-control select-input placeholder-active active" type="text" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-haspopup="true" aria-expanded="false" readonly="true"><span class="select-arrow"></span><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 0px;"></div><div class="form-notch-trailing"></div></div><div class="form-label select-fake-value">State</div></div><select class="select select-initialized">
+                                    <option value="1">State</option>
+                                    <option value="2">Option 1</option>
+                                    <option value="3">Option 2</option>
+                                    <option value="4">Option 3</option>
+                                </select></div>
+            
+                                </div>
+                                <div class="col-md-6 mb-4">
+            
+                                <div id="select-wrapper-574174" class="select-wrapper"><div class="form-outline"><input class="form-control select-input placeholder-active active" type="text" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-haspopup="true" aria-expanded="false" readonly="true"><span class="select-arrow"></span><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 0px;"></div><div class="form-notch-trailing"></div></div><div class="form-label select-fake-value">City</div></div><select class="select select-initialized">
+                                    <option value="1">City</option>
+                                    <option value="2">Option 1</option>
+                                    <option value="3">Option 2</option>
+                                    <option value="4">Option 3</option>
+                                </select></div>
+            
+                                </div>
+                            </div>
+            
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example90" class="form-control form-control-lg">
+                                <label class="form-label" for="form3Example90" style="margin-left: 0px;">Pincode</label>
+                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 54.4px;"></div><div class="form-notch-trailing"></div></div></div>
+            
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example99" class="form-control form-control-lg">
+                                <label class="form-label" for="form3Example99" style="margin-left: 0px;">Course</label>
+                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 49.6px;"></div><div class="form-notch-trailing"></div></div></div>
+            
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example97" class="form-control form-control-lg">
+                                <label class="form-label" for="form3Example97" style="margin-left: 0px;">Email ID</label>
+                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 56px;"></div><div class="form-notch-trailing"></div></div></div>
+            
+                            <div class="d-flex justify-content-end pt-3">
+                                <button type="button" class="btn btn-light btn-lg" onclick="document.getElementById('myForm').reset();">Reset all</button>
+                                <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                            </div>
+            
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </section>
+            </div>
+        </section>
+    </form>
+{% endblock %}

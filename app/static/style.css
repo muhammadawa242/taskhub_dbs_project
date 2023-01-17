@@ -1,0 +1,179 @@
+/* Define the video background */
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Style the video */
+.video-bg video {
+    width: 100%;
+}
+
+/* Add color overlay to the video */
+.video-bg:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4); /* Adjust the transparency as needed */
+    z-index: 1;
+}
+
+/* Style the rest of the website content */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 15ch;
+}
+
+#h1_bold{
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Style the buttons */
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #27b541; /* Change to match the color scheme of your video */
+    color: white;
+    text-shadow: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Style the links */
+a {
+    color: #5331da; /* Change to match the color scheme of your video */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+h1.welcome{
+    animation: slideIn 2s ease-in-out;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    font-weight: bold;
+    font-size: 90px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#signup{
+    padding-bottom: 2ch;
+    background-color: rgb(194, 161, 217);
+    border-radius: 25px;
+    font-size: 1em;
+    color: #ffd600;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Style the signup button on hover */
+#signup:hover {
+    background-color: #f9aa33;
+    transform: scale(1.1);
+}
+
+img{
+    width: 25%;
+    padding: 20px;
+    border-radius: 20ch;
+}
+
+img:hover{
+    transform: scale(0.9);
+    border-radius: 0ch;
+}
+
+#txt_mid{
+    padding: 10px;
+    font-size: large;
+}
+
+/* Style the footer container */
+footer {
+    background-color: #222222; /* Change to match the background color of your theme */
+    color: white;
+    padding: 25px;
+}
+
+/* Style the headings in the about and contact sections */
+.about h3, .contact h3 {
+    font-size: 1.2em;
+    color: #ffd600; /* Change to match the heading color of your theme */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Style the text in the about and contact sections */
+.about p, .contact p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Style the navbar */
+header {
+    position: fixed; /* Make the navbar stay fixed at the top of the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffd600; /* Change to match the color scheme of your theme */
+    color: white;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the links */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Add hover effect */
+nav ul li a:hover {
+    color: #f9aa33; /* Change to match the hover color scheme of your theme */
+}
+
+.submit-button {
+    background-color: rgb(180, 149, 149);
+    border-radius: 25ch;
+    color: white;
+    text-indent: -0.05ch;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    opacity: 0.5;
+}

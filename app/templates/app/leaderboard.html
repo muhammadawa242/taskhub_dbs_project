@@ -1,0 +1,24 @@
+{% extends 'app/layout.html' %}
+
+{% block body %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Description</th>
+            <th scope="col">Topic</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in res %}
+        <tr>
+            <th scope="row">{{i.0}}</th>
+            <td>{{i.1}}</td>
+            <td>{{i.6}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

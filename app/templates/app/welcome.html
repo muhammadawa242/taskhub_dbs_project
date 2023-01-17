@@ -1,0 +1,47 @@
+{% extends 'app/layout.html' %}
+
+{% block body %}
+    {% load static %}
+
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+            <h1 class="display-1 fw-bold text-white">Welcome to TaskHub</h1>
+            
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">
+                    <p class="display-6 fw-bold">What we do...</p>
+                    <div id="txt_mid">Apple is a sweet and delicious fruit that is very healthy. It is also a good disease-fighter and we can eat it every day. The delicious taste and bright colour of the food make it even more appealing. Moreover, it is a versatile fruit which we can use in many dishes. In an essay on apple, we will learn how many benefits it offers. You must have heard that “an apple a day, keeps the doctor away.” I remember hearing this for the first time and I decided to eat an apple every day. Ever since it has become my favourite fruit. It is round in shape and comes in a red colour. But, there are also green apples. An apple contains a high quantity of juice which is mixed with high fibres. It tastes sweet and is edible for everyone. As it is one of the healthiest fruit, it is my favourite. I try to eat one every day for the betterment of my health. One single apple contains 130 calories. The insoluble fibre in the fruit is effective for the body because it does not mix with water.</div>
+                    <p id="h1_bold">What our users say...</p>
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="app/signup_page"><button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Sign Up</button></a>
+                    <a href="app/login_page"><button type="button" class="btn btn-outline-light btn-lg px-4">Sign In</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% comment %} <h1 class="welcome">Welcome to TaskHub</h1>
+
+    <div>
+        <a href="app/signup_page"><button id='signup'>Sign Up</button></a>
+    </div>
+    
+    <p id="h1_bold">What we do...</p>
+    <div id="txt_mid">Apple is a sweet and delicious fruit that is very healthy. It is also a good disease-fighter and we can eat it every day. The delicious taste and bright colour of the food make it even more appealing. Moreover, it is a versatile fruit which we can use in many dishes. In an essay on apple, we will learn how many benefits it offers. You must have heard that “an apple a day, keeps the doctor away.” I remember hearing this for the first time and I decided to eat an apple every day. Ever since it has become my favourite fruit. It is round in shape and comes in a red colour. But, there are also green apples. An apple contains a high quantity of juice which is mixed with high fibres. It tastes sweet and is edible for everyone. As it is one of the healthiest fruit, it is my favourite. I try to eat one every day for the betterment of my health. One single apple contains 130 calories. The insoluble fibre in the fruit is effective for the body because it does not mix with water.</div>
+    <p id="h1_bold">What our users say...</p> {% endcomment %}
+    {% comment %} <div id="images">
+        <img src="{% static 'pic1.png' %}">
+    </div>
+    Maza aagya!
+    
+    <div id="images">
+        <img src="{% static 'pic2.png' %}">
+    </div>
+    Boht Boht maja aya!
+    
+    <div id="images">
+        <img src="{% static 'pic3.png' %}">
+    </div>
+    Dil Garden Garden horya hai! {% endcomment %}
+{% endblock %}
