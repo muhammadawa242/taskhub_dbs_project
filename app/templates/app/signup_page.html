@@ -1,7 +1,9 @@
 {% extends 'app/layout.html' %}
 
 {% block body %}
-    <form action="login_page" method="post" id="myForm">
+{% block content %}
+{% endblock %}
+    <form action="signup_page" method="post" id="myForm">
         {% csrf_token %}
 
         <section class="pb-4">
@@ -24,92 +26,123 @@
                     <div class="col">
                     <div class="card card-registration">
                         <div class="row g-0">
-                        <div class="col-xl-6 d-none d-xl-block">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;">
+                        <div>
+                            <img src="data:image/png;base64,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" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;">
                         </div>
                         <div class="col-xl-6">
                             <div class="card-body p-md-5 text-black">
                             <h4 class="mb-5 text-uppercase">Student registration form</h4>
             
                             <div class="row">
-                                <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <input type="text" id="form3Example1m" class="form-control form-control-lg">
-                                    <label class="form-label" for="form3Example1m" style="margin-left: 0px;">First name</label>
+                                    <input type="text" id="form3Example1m" class="form-control form-control-lg" name="name" placeholder="Full Name">
+                                    <label class="form-label" for="form3Example1m" style="margin-left: 0px;">Name</label>
+                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2"></div>
                                 <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 68.8px;"></div><div class="form-notch-trailing"></div></div></div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="form3Example1n" class="form-control form-control-lg">
-                                    <label class="form-label" for="form3Example1n" style="margin-left: 0px;">Last name</label>
-                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 68px;"></div><div class="form-notch-trailing"></div></div></div>
-                                </div>
                             </div>
-            
-                            <div class="form-outline mb-4">
-                                <input type="text" id="form3Example8" class="form-control form-control-lg">
-                                <label class="form-label" for="form3Example8" style="margin-left: 0px;">Address</label>
-                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 55.2px;"></div><div class="form-notch-trailing"></div></div></div>
+                            
+                            <div class="row">
+                                <div class="form-outline">
+                                    <input type="text" id="form3Example1m" class="form-control form-control-lg" name="dp_name" placeholder="Max. limit 50 Characters">
+                                    <label class="form-label" for="form3Example1m" style="margin-left: 0px;">UserName</label>
+                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2"></div>
+                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 68.8px;"></div><div class="form-notch-trailing"></div></div></div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="form-outline">
+                                    <input type="password" id="form3Example1m" class="form-control form-control-lg" name="password" placeholder="Password">
+                                    <label class="form-label" for="form3Example1m" style="margin-left: 0px;">Password</label>
+                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2"></div>
+                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 68.8px;"></div><div class="form-notch-trailing"></div></div></div>
+                            </div>
             
                             <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
             
                                 <h6 class="mb-0 me-4">Gender: </h6>
             
                                 <div class="form-check form-check-inline mb-0 me-4">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="option1">
+                                <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female">
                                 <label class="form-check-label" for="femaleGender">Female</label>
                                 </div>
             
                                 <div class="form-check form-check-inline mb-0 me-4">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender" value="option2">
+                                <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male">
                                 <label class="form-check-label" for="maleGender">Male</label>
                                 </div>
             
                                 <div class="form-check form-check-inline mb-0">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender" value="option3">
+                                <input class="form-check-input" type="radio" name="gender" id="otherGender" value="Other">
                                 <label class="form-check-label" for="otherGender">Other</label>
                                 </div>
+                                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2"></div>
             
                             </div>
             
                             <div class="row">
                                 <div class="col-md-6 mb-4">
             
-                                <div id="select-wrapper-53891" class="select-wrapper"><div class="form-outline"><input class="form-control select-input placeholder-active active" type="text" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-haspopup="true" aria-expanded="false" readonly="true"><span class="select-arrow"></span><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 0px;"></div><div class="form-notch-trailing"></div></div><div class="form-label select-fake-value">State</div></div><select class="select select-initialized">
-                                    <option value="1">State</option>
-                                    <option value="2">Option 1</option>
-                                    <option value="3">Option 2</option>
-                                    <option value="4">Option 3</option>
+                                <div id="select-wrapper-53891" class="select-wrapper"><div class="form-outline"><input class="form-control select-input placeholder-active active" type="text" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-haspopup="true" aria-expanded="false" readonly="true"><span class="select-arrow"></span><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 0px;"></div><div class="form-notch-trailing"></div></div><div class="form-label select-fake-value">Area</div></div><select class="select select-initialized" name="area">
+                                    <option value="1">Area</option>
+                                    {% for area in areas %}
+                                        <option value={{area.0}}>{{area.0}}</option>
+                                    {% endfor %}
                                 </select></div>
             
                                 </div>
                                 <div class="col-md-6 mb-4">
             
-                                <div id="select-wrapper-574174" class="select-wrapper"><div class="form-outline"><input class="form-control select-input placeholder-active active" type="text" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-haspopup="true" aria-expanded="false" readonly="true"><span class="select-arrow"></span><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 0px;"></div><div class="form-notch-trailing"></div></div><div class="form-label select-fake-value">City</div></div><select class="select select-initialized">
-                                    <option value="1">City</option>
-                                    <option value="2">Option 1</option>
-                                    <option value="3">Option 2</option>
-                                    <option value="4">Option 3</option>
+                                <div id="select-wrapper-574174" class="select-wrapper"><div class="form-outline"><input class="form-control select-input placeholder-active active" type="text" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-haspopup="true" aria-expanded="false" readonly="true"><span class="select-arrow"></span><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 0px;"></div><div class="form-notch-trailing"></div></div><div class="form-label select-fake-value">City</div></div><select class="select select-initialized" name="city">
+                                    <option value="0">City</option>
+                                    {% for city in cities %}
+                                        <option value={{city.0}}>{{city.0}}</option>
+                                    {% endfor %}
                                 </select></div>
             
                                 </div>
                             </div>
             
                             <div class="form-outline mb-4">
-                                <input type="text" id="form3Example90" class="form-control form-control-lg">
-                                <label class="form-label" for="form3Example90" style="margin-left: 0px;">Pincode</label>
+                                <input type="number" id="form3Example90" class="form-control form-control-lg" placeholder="Age" name="age">
+                                <label class="form-label" for="form3Example90" style="margin-left: 0px;">Age</label>
                             <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 54.4px;"></div><div class="form-notch-trailing"></div></div></div>
             
                             <div class="form-outline mb-4">
-                                <input type="text" id="form3Example99" class="form-control form-control-lg">
-                                <label class="form-label" for="form3Example99" style="margin-left: 0px;">Course</label>
+                                <input type="text" id="form3Example99" class="form-control form-control-lg" name="uniname" placeholder="University">
+                                <label class="form-label" for="form3Example99" style="margin-left: 0px;">University</label>
                             <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 49.6px;"></div><div class="form-notch-trailing"></div></div></div>
-            
+                            
                             <div class="form-outline mb-4">
-                                <input type="text" id="form3Example97" class="form-control form-control-lg">
+                                <input type="text" id="form3Example99" class="form-control form-control-lg" name="campus" placeholder="Campus">
+                                <label class="form-label" for="form3Example99" style="margin-left: 0px;">University Campus</label>
+                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 49.6px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                            <div class="form-outline mb-4">
+                                <input type="email" id="form3Example97" class="form-control form-control-lg" name="email">
                                 <label class="form-label" for="form3Example97" style="margin-left: 0px;">Email ID</label>
                             <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 56px;"></div><div class="form-notch-trailing"></div></div></div>
+                            
+                            <div class="form-outline mb-4">
+                                <input type="tel" id="phone" class="form-control form-control-lg" name="phone">
+                                <label class="form-label" for="phone" style="margin-left: 0px;">Contact</label>
+                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 56px;"></div><div class="form-notch-trailing"></div></div></div>
+                            
+                            <div class="form-outline mb-4">
+                                <label for="img">Select image:</label>
+                                <input type="file" id="img" name="pic" accept="image/*">
+                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 56px;"></div><div class="form-notch-trailing"></div></div></div>
+                            
+                            <div class="col-md-6 mb-4">
             
+                                <div id="select-wrapper-53891" class="select-wrapper"><div class="form-outline"><input class="form-control select-input placeholder-active active" type="text" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-haspopup="true" aria-expanded="false" readonly="true"><span class="select-arrow"></span><div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 0px;"></div><div class="form-notch-trailing"></div></div><div class="form-label select-fake-value">Referer</div></div><select class="select select-initialized" name="refsid">
+                                    <option value="1">No one</option>
+                                    {% for user in users %}
+                                        <option value={{user.0}}>{{user.1}}</option>
+                                    {% endfor %}
+                                </select></div>
+            
+                            </div>
+
                             <div class="d-flex justify-content-end pt-3">
                                 <button type="button" class="btn btn-light btn-lg" onclick="document.getElementById('myForm').reset();">Reset all</button>
                                 <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
